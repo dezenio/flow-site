@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../icon-64.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<title>Flow for Zoom</title>
+<style>
+:root {
+  --bg: #f6f7fb; --surface: #ffffff; --text: #141a2b; --muted: #5b6478; --border: #dde2ec;
+  --accent: #2e6bc7; --accent-soft: #e6eefb; --radius: 14px;
+  --shadow: 0 1px 2px rgba(20, 26, 43, .06), 0 4px 16px rgba(20, 26, 43, .06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1222; --surface: #131b2e; --text: #e8ecf6; --muted: #9aa5bd; --border: #26314d;
+    --accent: #5fa0ff; --accent-soft: #18284a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1222; --surface: #131b2e; --text: #e8ecf6; --muted: #9aa5bd; --border: #26314d;
+  --accent: #5fa0ff; --accent-soft: #18284a;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+header { margin-bottom: 28px; }
+.brand { font-weight: 700; color: var(--accent); letter-spacing: .02em; display: flex; align-items: center; gap: 10px; }
+.brand img { border-radius: 8px; }
+h1 { font-size: 2rem; line-height: 1.2; margin: 6px 0 4px; }
+.meta { color: var(--muted); margin: 0; }
+section {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 20px 22px; margin: 16px 0;
+}
+h2 { font-size: 1.15rem; margin: 0 0 8px; }
+p, ul { margin: 8px 0; }
+ul { padding-left: 1.2em; }
+li { margin: 4px 0; }
+a { color: var(--accent); }
+.note { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; }
+footer { color: var(--muted); font-size: .9rem; margin-top: 28px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><img src="../icon-64.png" alt="" width="32" height="32"> Flow</div>
+  <h1>Flow for Zoom</h1>
+  <p class="meta">How to add, use and remove the Flow app for Zoom</p>
+</header>
+
+<section>
+  <h2>What it does</h2>
+  <p>Flow is a work assistant for Mac, iPhone and iPad. With Zoom connected, after each meeting
+  Flow reads the meeting's AI Companion summary and your My Notes and writes the meeting up for
+  you: key points, decisions and the to-dos that fall to you. When you schedule a meeting in Flow,
+  it can add a Zoom link.</p>
+</section>
+
+<section>
+  <h2>Before you start</h2>
+  <ul>
+    <li>Flow installed on your Mac, iPhone or iPad.</li>
+    <li>A Zoom account. For summaries, turn on <strong>AI Companion meeting summaries</strong> in
+    your Zoom settings; the meeting's host starts one during the meeting.</li>
+    <li>If your Zoom account is managed by your organization, an admin may need to allow Flow in
+    the Zoom App Marketplace.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Adding Flow to Zoom</h2>
+  <ol>
+    <li>Open Flow and go to <strong>Settings › Account</strong>.</li>
+    <li>Choose <strong>Connect Zoom</strong>. A Zoom sign-in window opens.</li>
+    <li>Sign in to Zoom and review what Flow asks for, then choose <strong>Allow</strong>.</li>
+    <li>The window closes and Settings shows Zoom as connected.</li>
+  </ol>
+  <p>Zoom allows one sign-in per app, so one of your devices reads Zoom and shares what it reads
+  with your other devices through your Flow folder.</p>
+</section>
+
+<section>
+  <h2>Using Flow with Zoom</h2>
+  <ul>
+    <li><strong>Meeting write-ups:</strong> after a Zoom meeting ends and its AI Companion summary
+    is ready, Flow adds the meeting's write-up and to-dos. Open the meeting in Flow to read them,
+    edit them, or file them with a project.</li>
+    <li><strong>My Notes:</strong> notes you take in Zoom's My Notes during a meeting are added to
+    that meeting in Flow.</li>
+    <li><strong>Zoom links:</strong> when you create a meeting in Flow, choose Zoom as the meeting
+    link and Flow creates the Zoom meeting for you.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What Flow can access</h2>
+  <p>Only your own Zoom data: your meetings and past meetings, their AI Companion summaries, your
+  My Notes (with their transcripts) found through Zoom Docs search, and creating meetings you
+  schedule in Flow. Requests go directly from your device to Zoom; Dezenio runs no servers and
+  doesn't receive your data. See the <a href="../privacy">Privacy Policy</a>.</p>
+</section>
+
+<section>
+  <h2>Removing Flow</h2>
+  <ol>
+    <li>In Flow, go to <strong>Settings › Account</strong> and choose <strong>Disconnect Zoom</strong>.
+    Flow deletes its Zoom sign-in from the device and stops reading from Zoom.</li>
+    <li>In Zoom, sign in at marketplace.zoom.us, go to <strong>Manage › Added Apps</strong>, find
+    Flow and choose <strong>Remove</strong>. This revokes Flow's access for all your devices.</li>
+    <li>Meeting write-ups Flow already made stay in Flow until you delete them. To remove all of
+    Flow's data, delete the app and the Flow folder in your OneDrive.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>No write-up for a meeting:</strong> the meeting had no AI Companion summary or My
+    Notes, or Zoom is still preparing it. Flow checks again later.</li>
+    <li><strong>"Zoom didn't allow…" message:</strong> choose Reconnect Zoom in Settings › Account
+    and allow everything Flow asks for.</li>
+    <li>Still stuck? Write to <a href="mailto:support@dezenio.com">support@dezenio.com</a>.</li>
+  </ul>
+</section>
+
+<footer>© 2026 Dezenio, LLC · <a href="../privacy">Privacy Policy</a> · <a href="../terms">Terms of Use</a> · <a href="../support">Support</a></footer>
+</main>
+</body>
+</html>
