@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../icon-64.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<title>Flow Dependency Management</title>
+<link rel="stylesheet" href="../flow.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><img src="../icon-64.png" alt="" width="32" height="32"> Flow</div>
+  <h1>Infrastructure and Dependency Management Policy</h1>
+  <p class="meta">Dezenio, LLC · Effective November 11, 2026 · Reviewed at least once a year</p>
+</header>
+<section>
+  <h2>Infrastructure</h2>
+  <ul>
+    <li>Flow has no server infrastructure of its own. Its public web pages are static files served by GitHub Pages over HTTPS.</li>
+    <li>Third-party services Flow connects to (Microsoft Graph, Zoom, Anthropic) are accessed directly from the user's device with the user's own credentials.</li>
+  </ul>
+</section>
+<section>
+  <h2>Dependencies</h2>
+  <ul>
+    <li>Flow uses only Apple's system frameworks and includes no third-party packages or SDKs.</li>
+    <li>Adding any third-party dependency requires a review of its need, maintenance, license and security record; the version is pinned and monitored for advisories.</li>
+    <li>The development toolchain (Xcode and Apple SDKs) is updated to current releases within 30 days of release, or sooner for security fixes.</li>
+    <li>APIs used are reviewed when providers announce changes or deprecations.</li>
+  </ul>
+</section>
+
+<footer>© 2026 Dezenio, LLC · <a href="./">Security</a> · <a href="../privacy">Privacy Policy</a> · <a href="../support">Support</a></footer>
+</main>
+</body>
+</html>

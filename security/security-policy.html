@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../icon-64.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<title>Flow Security Policy</title>
+<link rel="stylesheet" href="../flow.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><img src="../icon-64.png" alt="" width="32" height="32"> Flow</div>
+  <h1>Security Policy</h1>
+  <p class="meta">Dezenio, LLC · Effective November 11, 2026 · Reviewed at least once a year</p>
+</header>
+<section>
+  <h2>Purpose</h2>
+  <p>Sets out how Dezenio protects Flow and the data of people who use it.</p>
+</section>
+<section>
+  <h2>Data handling</h2>
+  <ul>
+    <li>Flow processes user data only on the user's devices and in services the user connects with their own sign-in. Dezenio operates no servers for Flow and does not collect, receive or store user data, OAuth tokens or API keys.</li>
+    <li>Tokens and keys are stored in the device Keychain; app data stays in the app's sandbox, encrypted by the operating system, and in the user's own OneDrive folder.</li>
+    <li>Flow requests only the permissions it uses, and does not log message content, meeting content or credentials.</li>
+  </ul>
+</section>
+<section>
+  <h2>Access control</h2>
+  <ul>
+    <li>Access to Flow's source code, signing certificates and developer accounts (Apple, GitHub, Zoom, Microsoft Entra, Anthropic) is limited to Dezenio personnel who need it.</li>
+    <li>These accounts require multi-factor authentication.</li>
+    <li>Access is reviewed at least once a year and removed promptly when no longer needed.</li>
+  </ul>
+</section>
+<section>
+  <h2>Secure development</h2>
+  <p>All changes follow the <a href="ssdlc">Secure Software Development Lifecycle</a>, including code review, automated tests, secret checks, and SAST before release.</p>
+</section>
+<section>
+  <h2>Reporting a security issue</h2>
+  <p>Report suspected vulnerabilities to <a href="mailto:support@dezenio.com">support@dezenio.com</a> with "Security" in the subject. We acknowledge reports within 3 business days and handle them under the <a href="vulnerability-management">Vulnerability Management Procedures</a>.</p>
+</section>
+
+<footer>© 2026 Dezenio, LLC · <a href="./">Security</a> · <a href="../privacy">Privacy Policy</a> · <a href="../support">Support</a></footer>
+</main>
+</body>
+</html>

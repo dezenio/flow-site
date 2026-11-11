@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../icon-64.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<title>Flow Secure Development Lifecycle</title>
+<link rel="stylesheet" href="../flow.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><img src="../icon-64.png" alt="" width="32" height="32"> Flow</div>
+  <h1>Secure Software Development Lifecycle</h1>
+  <p class="meta">Dezenio, LLC · Effective November 11, 2026 · Reviewed at least once a year</p>
+</header>
+<section>
+  <h2>Scope</h2>
+  <p>How Dezenio designs, builds, tests and releases Flow, the native app for macOS, iOS, iPadOS and watchOS. Flow has no server component: it runs on the user's devices and connects directly to Microsoft 365, Zoom and Anthropic with the user's own credentials.</p>
+</section>
+<section>
+  <h2>1. Design</h2>
+  <ul>
+    <li>Significant design choices are recorded as decision documents in the repository (for example, keeping all processing on the user's device with no Dezenio servers).</li>
+    <li>Each new connection or permission is reviewed for least privilege: Flow asks only for delegated, user-level scopes it uses, and every scope is listed with its purpose.</li>
+    <li>Privacy by design: user data stays on the user's devices and in their own storage; Dezenio does not receive it.</li>
+  </ul>
+</section>
+<section>
+  <h2>2. Development</h2>
+  <ul>
+    <li>Source code lives in a private GitHub repository. Each change is made on its own branch and merged only after review and a passing build.</li>
+    <li>Code is written in Swift with Apple's frameworks only; no third-party packages are included (see the Dependency Management Policy).</li>
+    <li>Secrets never go in source code. Users' tokens and API keys are stored only in the device Keychain. Identifiers in the code (app and client IDs) are public values, not secrets. Before each commit, changes are checked for secret patterns (such as API key prefixes).</li>
+    <li>Network traffic uses HTTPS with TLS 1.2 or higher, enforced by Apple's App Transport Security with no exceptions. OAuth sign-in uses the authorization code flow with PKCE; no client secrets are shipped in the app.</li>
+    <li>AI-assisted code changes are reviewed by the developer before merging, like any other change.</li>
+  </ul>
+</section>
+<section>
+  <h2>3. Testing</h2>
+  <ul>
+    <li>An automated test suite (over 1,200 tests) covers models, storage, sign-in, sync and each connection. It runs before changes are merged and before every release.</li>
+    <li>Tests are isolated from real user data: they run against throwaway settings and files, and a dedicated test fails the suite if that isolation is ever broken.</li>
+    <li>Static application security testing (SAST) with Semgrep runs on the codebase before each release. Findings are triaged under the Vulnerability Management Policy.</li>
+    <li>Dynamic application security testing (DAST) with OWASP ZAP runs against Flow's public web pages before they change and at least every six months.</li>
+  </ul>
+</section>
+<section>
+  <h2>4. Release</h2>
+  <ul>
+    <li>Builds are signed with Dezenio's Apple Developer certificates and distributed through Apple (TestFlight and the App Store), which applies Apple's review and notarization.</li>
+    <li>Each release goes to testers through TestFlight before wider release, with notes describing what changed.</li>
+    <li>Signing keys and the App Store Connect API key are kept on the developer's machine only, never in the repository or shared.</li>
+  </ul>
+</section>
+<section>
+  <h2>5. Maintenance</h2>
+  <ul>
+    <li>Bugs and security issues are logged and tracked to resolution in the project's issue log.</li>
+    <li>Security reports are handled under the Vulnerability Management and Incident Response policies.</li>
+    <li>Changes to the APIs Flow uses (Microsoft Graph, Zoom, Anthropic, Apple) are monitored and handled as part of normal releases.</li>
+  </ul>
+</section>
+
+<footer>© 2026 Dezenio, LLC · <a href="./">Security</a> · <a href="../privacy">Privacy Policy</a> · <a href="../support">Support</a></footer>
+</main>
+</body>
+</html>
