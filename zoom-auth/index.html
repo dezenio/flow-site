@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
+<link rel="icon" href="../icon-64.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
 <title>Flow Added to Zoom</title>
 <style>
 :root {
@@ -33,7 +35,8 @@ body {
 }
 main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
 header { margin-bottom: 28px; }
-.brand { font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+.brand { font-weight: 700; color: var(--accent); letter-spacing: .02em; display: flex; align-items: center; gap: 10px; }
+.brand img { border-radius: 8px; }
 h1 { font-size: 2rem; line-height: 1.2; margin: 6px 0 4px; }
 .meta { color: var(--muted); margin: 0; }
 section {
@@ -52,7 +55,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 28px; text-align: ce
 <body>
 <main>
 <header>
-  <div class="brand">Flow</div>
+  <div class="brand"><img src="../icon-64.png" alt="" width="32" height="32"> Flow</div>
   <h1>Flow is added to your Zoom account</h1>
   <p class="meta">One more step, in the Flow app</p>
 </header>
